@@ -1,13 +1,24 @@
-import PropTypes from "prop-types";
 import React, { Component } from "react";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-export class App extends Component {
-  static propTypes = {};
+import Layout from "./Components/Navigator/Layout.js";
+import Home from "./Pages/Home.js";
+import Docs from "./Pages/Docs.js";
 
+export class App extends Component {
   render() {
-    return <div>App</div>;
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="Documentos" element={<Docs />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    );
   }
 }
 
