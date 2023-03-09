@@ -2,18 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Horizontal_d.css";
 
-function DispText(props) {
+import colors from "../../Colors";
+
+function Disptext(props) {
+  console.log(props);
   return (
-    <div>
+    <div class="textC" style={{ backgroundColor: colors.primary }}>
       <h1>{props.tittle}</h1>
       <p>{props.text}</p>
     </div>
   );
 }
-function DispImage(props) {
+function Dispimage(props) {
   return (
-    <div>
-      <img src={props.image} />
+    <div class="ImagC">
+      <img class="Imag" src={props.image} alt="hello" />
     </div>
   );
 }
@@ -21,9 +24,9 @@ function DispImage(props) {
 function Horizontal_d(props) {
   return (
     <div class="Main">
-      {props.LRDir && DispImage(props.image)}
-      {DispText(...{ props })}
-      {!props.LRDir && DispImage(props.image)}
+      {props.LRDir && <Dispimage {...props} />}
+      {<Disptext {...props} />}
+      {!props.LRDir && <Dispimage {...props} />}
     </div>
   );
 }

@@ -1,0 +1,26 @@
+.Main{
+    display:flex;
+    flex-direction: row;
+    
+    width:100%;
+    
+    background-color: blue;
+
+    margin-bottom: 30px;
+
+}
+
+.textC{
+   margin: 5px;
+   justify-content: center;
+   align-items: center;
+}
+
+.Imag{
+    width:100%;
+}
+
+.ImagC{
+    margin:5px
+    
+}
