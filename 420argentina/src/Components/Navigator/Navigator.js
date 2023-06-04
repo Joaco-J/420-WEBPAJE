@@ -1,8 +1,9 @@
-import "./Layout.css";
+import "./Navigator.css";
 
 import { Outlet, useNavigate } from "react-router-dom";
 
 import Banner from "../../Images/BanerTest1.jpg";
+import colors from "../../Colors";
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -11,8 +12,9 @@ const Layout = () => {
       <div class="ImDiv">
         <img src={Banner} id="banner" />
       </div>
-      <div class="navB">
+      <div class="navB" style={{ backgroundColor: colors.primary }}>
         <button
+          class="button"
           onClick={() => {
             navigate("/");
           }}
@@ -20,6 +22,7 @@ const Layout = () => {
           Home
         </button>
         <button
+          class="button"
           onClick={() => {
             navigate("/Calendario");
           }}
@@ -27,11 +30,20 @@ const Layout = () => {
           Calendario
         </button>
         <button
+          class="button"
           onClick={() => {
             navigate("/Documentos");
           }}
         >
           Documentos
+        </button>
+        <button
+          class="button"
+          onClick={() => {
+            navigate("/Campeonato");
+          }}
+        >
+          Campeonato
         </button>
       </div>
 
